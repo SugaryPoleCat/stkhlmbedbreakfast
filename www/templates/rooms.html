@@ -1,9 +1,9 @@
 <ion-view view-title="Book rooms">
     
-    <ion-content class="padding">
+    <ion-content class="padding roomslist">
             <ion-refresher pulling-text="Pull to refresh..."
             on-refresh="doRefresh()">
-</ion-refresher>
+            </ion-refresher>
 
         <ion-item ng-repeat="item in rum" class="item-thumbnail-right" href="#/tab/rooms/{{item.ID}}">
             <img ng-src="img/{{item.FilNamn}}.jpg" alt="">

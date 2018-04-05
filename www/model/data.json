@@ -4,29 +4,29 @@
             "Pris":500,
             "Valuta":"Kronor",
             "FilNamn":"Rum_Enkel",
-            "Beskriv":"Ett enkelt rum",
+            "Beskriv":"Ett enkelt rum för en person där man får göra vad man vill!",
             "ID":0,
             "MaxVux":1,
-            "lBeskriv":"Ett enkelt rum med massa alkohol i"
+            "lBeskriv":"Ett enkelt rum med massa alkohol i. Våra kylskåk är alltid fyllda med secondhand alcohol, för dig som förulat all hopp i livet!"
         },
         {
             "Namn":"Dubbelrum",
             "Pris":700,
             "Valuta":"Kronor",
             "FilNamn":"Rum_Dubbel",
-            "Beskriv":"Ett dubbel rum",
+            "Beskriv":"Ett dubbel rum för de som gillar ha någon som håller på och... game:ar hela natten",
             "ID":1,
             "MaxVux":2,
-            "lBeskriv":"Ett dubbel rum med massa barn i"
+            "lBeskriv":"Ett dubbel rum med massa barn i. Eller inte. Du väljer. Vi levererar. Vi bryr oss inte vad du gör med alla barn vi ger dig. Skapa en ring åt de och låt de slåss för den sista biten av mat, what do I care."
         },
         {
             "Namn":"Familjerum",
             "Pris":900,
             "Valuta":"Kronor",
             "FilNamn":"Rum_Familj",
-            "Beskriv":"Ett familje rum",
+            "Beskriv":"Ett familje rum. För de som.... gav upp sina motorcykel äventyr och bytte till mini vans.",
             "ID":2,
             "MaxVux":5,
-            "lBeskriv":"Ett familje rum med massa leksaker i"
+            "lBeskriv":"Ett familje rum med massa leksaker i. Eller svärd. Eller andra vapen. Alla ser leksaker på olika sätt. Mina leksaker ligger i en låda under min säng. Inte ens jag vet vad jag har där. Aldrig öppnat den. "
         }
     ]
