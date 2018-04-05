@@ -179,8 +179,8 @@ angular.module('starter', ['ionic'])
          '<b>Antal barn: </b>'+$scope.data.antbarn+'<br/>'+
          '<b>Checkin: </b>'+$scope.data.date1+'<br/>'+
          '<b>Checkout: </b>'+$scope.data.date2+'<br/>'+
-         '<b>Total pris: </b>'+$scope.data.totalPris+'<br/>'+
-         '<b>Antal dagar: </b>'+$scope.data.diffFinal+'<br/>',
+         '<b>Total pris: </b>'+$scope.data.totalprice+'<br/>'+
+         '<b>Antal dagar: </b>'+$scope.data.days+'<br/>',
          title: 'Tack!',
          subTitle: 'Du har köpt grejen!',
          scope: $scope,

@@ -4,7 +4,7 @@
             <a href="img/{{item.FilNamn}}.jpg"><img ng-src="img/{{item.FilNamn}}.jpg" width="90%" max-width="800px" alt=""></a>
             <h3>{{item.Beskriv}}</h3>
             <p>{{item.lBeskriv}}</p>
-            <h5>{{item.Pris}} | {{item.Valuta}}</h5>
+            <h5 ng-model="data.price" ng-init="data.price=item.Pris">{{item.Pris}} | {{item.Valuta}}</h5>
             <hr>
             <h3 class="rubrik">Booka här</h3>
             <form ng-submit="submit()" name="form">
@@ -19,7 +19,7 @@
                 <label class="container checkboxbarn">
                     <ion-checkbox ng-model="barnChecked" ng-init="checked=false">Har du barn?</ion-checkbox>
                 </label>
-                <ion-item ng-repeat="item in rum | filter: {ID : valdrum}" class="booka">
+                <ion-item ng-repeat="item in rum | filter: {ID : valdrum}" class="booka" ng-init="data.antbarn=0" class="booka">
                 <label ng-if="barnChecked" class="item item-input item-stacked-label">
                     <span>Antal barn</span>
                     <input type="number" name="barn" required min="0" value="0" max="{{item.MaxVux - data.antvuxen}}" ng-model="data.antbarn">
