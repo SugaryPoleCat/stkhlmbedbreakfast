@@ -5,11 +5,11 @@
             on-refresh="doRefresh()">
 </ion-refresher>
 
-        <ion-item ng-repeat="item in rum" href="#/tab/rooms/{{item.ID}}">
+        <ion-item ng-repeat="item in rum" class="item-thumbnail-right" href="#/tab/rooms/{{item.ID}}">
+            <img ng-src="img/{{item.FilNamn}}.jpg" alt="">
             <h2>{{item.Namn}}</h2>
             <h3>{{item.Beskriv}}</h3>
             <h4>{{item.Pris}} | {{item.Valuta}}</h4>
-            <h6>{{item.ID}}</h6>
         </ion-item>
     </ion-content>
 </ion-view>

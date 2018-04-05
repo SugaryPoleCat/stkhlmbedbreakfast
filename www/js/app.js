@@ -83,13 +83,31 @@ angular.module('starter', ['ionic'])
       }
     }
   })
+  .state("tabs.checkout",{
+    url:"/rooms/checkout",
+    views:{
+      "rooms-tab":{
+        templateUrl:"templates/checkout.html",
+        controller:"RoomsCtrl"
+      }
+    }
+  })
 })
 .config(function($stateProvider, $urlRouterProvider){
   $urlRouterProvider.otherwise("/tab/home");
 })
 
-.controller("RoomsCtrl", function($scope,$http,$state,$stateParams){
-  $scope.data = {};
+.controller("RoomsCtrl", function($rootScope,$scope,$http,$state,$stateParams){
+  $rootScope.data = {};
+  $rootScope.submit=function(){
+    var url='http://webacademy.se/ionic/index.php';
+    $http.post(url,$rootScope.data).then(function (response){
+      $rootScope.response=response;
+    })
+    console.log($rootScope);
+    console.log(response);
+  }
+
   $http.get('../model/data.json')
   .success(function(data){
     $scope.rum = data;
@@ -113,4 +131,10 @@ angular.module('starter', ['ionic'])
     });
 
   }
+  $scope.dateDifference = function() {
+    var dropdt = new Date(example);
+    var pickdt = new Date(this.seconddate);
+    var dif = parseInt((dropdt - pickdt) / (24 * 3600 * 1000));
+    return dif;
+};
 })

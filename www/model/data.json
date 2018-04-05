@@ -1,32 +1,32 @@
     [
         {
             "Namn":"Enkelrum",
-            "Pris":"500",
+            "Pris":500,
             "Valuta":"Kronor",
-            "KortNamn":"Rum_Enkel",
+            "FilNamn":"Rum_Enkel",
             "Beskriv":"Ett enkelt rum",
-            "ID":"0",
-            "MaxVux":"1",
+            "ID":0,
+            "MaxVux":1,
             "lBeskriv":"Ett enkelt rum med massa alkohol i"
         },
         {
             "Namn":"Dubbelrum",
-            "Pris":"700",
+            "Pris":700,
             "Valuta":"Kronor",
-            "KortNamn":"Rum_Dubbel",
-            "Beskriv":"Ett enkelt rum",
-            "ID":"1",
-            "MaxVux":"2",
+            "FilNamn":"Rum_Dubbel",
+            "Beskriv":"Ett dubbel rum",
+            "ID":1,
+            "MaxVux":2,
             "lBeskriv":"Ett dubbel rum med massa barn i"
         },
         {
             "Namn":"Familjerum",
-            "Pris":"900",
+            "Pris":900,
             "Valuta":"Kronor",
-            "KortNamn":"Rum_Familj",
-            "Beskriv":"Ett enkelt rum",
-            "ID":"2",
-            "MaxVux":"5",
+            "FilNamn":"Rum_Familj",
+            "Beskriv":"Ett familje rum",
+            "ID":2,
+            "MaxVux":5,
             "lBeskriv":"Ett familje rum med massa leksaker i"
         }
     ]

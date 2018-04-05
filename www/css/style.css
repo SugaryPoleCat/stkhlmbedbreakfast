@@ -1,1 +1,102 @@
 /* Empty. Add your own CSS if you like */
+h1{
+    text-align: center;
+}
+.rubrik{
+    text-align:center;
+    background-color: #e8f2ff;
+    padding:10px;
+}
+.booka{
+    background-color: #f6faff;
+}
+.home{
+    background-color: #fff;
+}
+.nav-bar-lel{
+    background-color: #387ef5;
+}
+.checkboxbarn{
+    padding:10px;
+}
+.branding{
+    width: 50%;max-width: 400px;
+    margin: 0 auto;
+    margin-top: 20px;
+    text-align: center;
+    background-color: rgba(0,0,0,0.3);
+    color: #fff;
+    padding:20px;
+}
+.homeheader{
+    color:#fff;
+}
+.homesplash{
+    background: url(../img/hotel.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+/* Customize the label (the container) */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #aaa;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #eee;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #11aa11;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }

@@ -1,53 +1,62 @@
 <ion-view view-title="Room booking">
     <ion-content class="padding" ng-repeat="item in rum | filter: {ID : valdrum}">
-            <h2>{{item.Namn}}</h2>
+            <h1>{{item.Namn}}</h1>
+            <a href="img/{{item.FilNamn}}.jpg"><img ng-src="img/{{item.FilNamn}}.jpg" width="90%" alt=""></a>
             <h3>{{item.Beskriv}}</h3>
             <p>{{item.lBeskriv}}</p>
             <h5>{{item.Pris}} | {{item.Valuta}}</h5>
-            <h6>{{item.ID}}</h6>
 
             <hr>
-            <h3>Booka här</h3>
+            <h3 class="rubrik">Booka här</h3>
             <form ng-submit="submit()" name="form">
-                <ion-item ng-repeat="item in rum | filter: {ID : valdrum}">
+                <div class="booka">
+                    <h3>Personer</h3>
+                <ion-item ng-repeat="item in rum | filter: {ID : valdrum}" ng-init="data.antvuxen=item.MaxVux" class="booka">
                     <label class="item item-input item-stacked-label">
                     <span>Antal vuxna</span>
                     <input type="number" name="vuxen" required min="1" value="1" max="{{item.MaxVux}}" ng-model="data.antvuxen">
                     </label>
                 </ion-item>
-                <ion-item ng-repeat="item in rum | filter: {ID : valdrum}">
-                    <label class="item item-input item-stacked-label">
+                <label class="container checkboxbarn">
+                <ion-checkbox ng-model="barnChecked" ng-init="checked=false">Har du barn?</ion-checkbox>
+                </label>
+                <label ng-if="barnChecked" class="item item-input item-stacked-label">
                     <span>Antal barn</span>
                     <input type="number" name="barn" required min="0" value="0" max="{{item.MaxVux - data.antvuxen}}" ng-model="data.antbarn">
                     </label>
-                </ion-item>
                 <hr>
+                <h3>Datum</h3>
                 <label class="item item-input item-stacked-label">
                     <span>Check-in</span>
-                    <input type="date" name="checkIn" required ng-model"data.checkIn" id="date_checkIn">
+                    <input type="date" name="checkin" required ng-model="data.checkin" id="checkin">
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span>Check-out</span>
-                    <input type="date" name="checkOut" required ng-model"data.checkOut" id="date_checkOut">
+                    <input type="date" name="checkout" required ng-model="data.checkout" id="checkout">
                 </label>
                 <hr>
+                <h3>Information</h3>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Namn</span>
-                    <input type="text" name="fNamn" required ng-model"data.fNamn" id="fNamn">
+                    <input type="text" name="fNamn" required ng-model="data.fNamn" id="fNamn">
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Efternamn</span>
-                    <input type="text" name="eNamn" required ng-model"data.eNamn" id="eNamn">
+                    <input type="text" name="eNamn" required ng-model="data.eNamn" id="eNamn">
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Telefonnummer</span>
-                    <input type="number" name="telefon" required ng-model"data.telefon" id="telefon">
+                    <input type="number" name="telefon" required ng-model="data.telefon" id="telefon">
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">E-mail</span>
-                    <input type="text" name="email" required ng-model"data.email" id="email">
+                    <input type="email" name="email" required ng-model="data.email" id="email">
+                    <div ng-show="form.email.$error.email" class="error">
+                        Ange ett giltig e-postadress tack!
+                    </div>
                 </label>
-                <input class="button button-block button-positive" type="submit" name="submit" value="Skicka" id="submit_btn" >
+                <input class="button button-block button-success" type="submit" name="submit" value="Skicka" id="submit_btn" ng-disabled="form.$invalid">
+                </div>
             </form>
             <div class="item item-text-wrap">
       <h3>Testing</h3>
