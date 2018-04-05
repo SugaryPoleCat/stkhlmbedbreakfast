@@ -1,0 +1,15 @@
+<ion-view view-title="Book rooms">
+    
+    <ion-content class="padding">
+            <ion-refresher pulling-text="Pull to refresh..."
+            on-refresh="doRefresh()">
+</ion-refresher>
+
+        <ion-item ng-repeat="item in rum" href="#/tab/rooms/{{item.ID}}">
+            <h2>{{item.Namn}}</h2>
+            <h3>{{item.Beskriv}}</h3>
+            <h4>{{item.Pris}} | {{item.Valuta}}</h4>
+            <h6>{{item.ID}}</h6>
+        </ion-item>
+    </ion-content>
+</ion-view>

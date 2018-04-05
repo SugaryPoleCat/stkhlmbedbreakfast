@@ -5,6 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 angular.module('starter', ['ionic'])
 
+
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
     if(window.cordova && window.cordova.plugins.Keyboard) {
@@ -21,4 +22,95 @@ angular.module('starter', ['ionic'])
       StatusBar.styleDefault();
     }
   });
+})
+.config(function($ionicConfigProvider) {
+  $ionicConfigProvider.platform.android.tabs.position("bottom");
+ })
+
+.config(function($stateProvider, $urlRouterProvider){
+  $stateProvider
+  .state("tabs", 
+  {
+    url:"/tab",
+    templateUrl: "templates/tabs.html",
+    abstract: true
+  })
+  .state("tabs.home", 
+  {
+    url: "/home",
+    views: 
+    {
+      "home-tab": 
+      {
+        templateUrl: "templates/home.html",
+      }
+    }
+  })
+  .state("tabs.about", 
+  {
+    url: "/about",
+    views: 
+    {
+      "about-tab": 
+      {
+        templateUrl: "templates/about.html",
+      }
+    }
+  })
+  .state("tabs.contact",{
+    url:"/contact",
+    views:{
+      'about-tab':{
+        templateUrl:"templates/contact.html",
+      }
+    }
+  })
+  .state("tabs.rooms",{
+    url:"/rooms",
+    views:{
+      "rooms-tab":{
+        templateUrl:"templates/rooms.html",
+        controller:"RoomsCtrl"
+      }
+    }
+  })
+  .state("tabs.room",{
+    url:"/rooms/:ID",
+    views:{
+      "rooms-tab":{
+        templateUrl:"templates/room.html",
+        controller:"RoomsCtrl"
+      }
+    }
+  })
+})
+.config(function($stateProvider, $urlRouterProvider){
+  $urlRouterProvider.otherwise("/tab/home");
+})
+
+.controller("RoomsCtrl", function($scope,$http,$state,$stateParams){
+  $scope.data = {};
+  $http.get('../model/data.json')
+  .success(function(data){
+    $scope.rum = data;
+    $scope.valdrum = $state.params.ID;
+    console.log($scope.rum);
+    console.log($state);
+    /*$scope.valdrum=$scope.rum.find(function(item){
+      return item.ID==$stateParams.ID;
+    });*/
+    console.log($scope.valdrum);
+   })
+   $scope.data = {};
+   $scope.doRefresh = function() {
+    $http.get('../model/data.json')
+    .success(function(data){
+      $scope.rum = data;
+     })
+     .finally(function() {
+      // Stop the ion-refresher from spinning
+      $scope.$broadcast('scroll.refreshComplete');
+    });
+
+  }
 })
